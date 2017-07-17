@@ -1,11 +1,12 @@
 ## 23.xxx
-# Include 23.xxx Team Unity game project.
+### Include 23.xxx Team Unity game project.
 
 Title : 빨간 모자의 진실
+
 Genre : RPG & Shooting Game
 
 ---------------------------------------------------------------------------
-# Job Assignment
+### Job Assignment
 
 Min-Hyeok Lee : UI & UX design, Map, Monster A.I., QA.
 
