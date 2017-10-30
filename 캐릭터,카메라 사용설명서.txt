@@ -1,0 +1,62 @@
+======캐릭터와 시점변경이 되는 카메라======
+
+Asset/Scenes/test_oj.unity 누르면
+제가 작업한 환경과
+Inspector에서 만진 설정을 보실 수 있습니다.
+
+
+========================조작========================
+방향키 조작
+스페이스 점프
+
+1,2,3,4 카메라 방향변경
+
+   3         z
+4  ㅇ 2      ∧
+   1         |  z축
+--------->x  |
+x축
+              ㅇ물체
+ 
+-카메라 시점 바꿔도 방향키 조작은 같습니다.
+
+
+====================================================
+
+※캐릭터 가져다 쓰는 방법
+	1. rh_oj Asset 폴더의 Character, Material, 
+	Script폴더를 내 프로젝트의 
+	Asset 폴더로 가져옵니다.
+	
+	2. Asset/Character 에서 player_cam(카메라) 과 
+	test_player(캐릭터)를 좌측화면의
+	Hierarchy에 끌어다 놓습니다.
+
+	3. Hierarchy의 test_player에 Asset/Material
+	폴더 안의 마음에 드는 색깔을 골라 입힙니다.
+	(필수는 아님)
+
+	4. Script 폴더 안에 player_cam_move.cs 파일을 
+	Hierarchy 안 test_player 에 끌어다 놓으시고
+	Script 폴더 안에 t_player_move.cs 파일을
+	Hierarchy 안 player_cam에 끌어다 놓습니다.
+
+	5. Hierarchy의 test_player를 누른상태로
+	우측화면의 Inspector 탭을 누르고 아래로
+	스크롤을 내리면 T_player_move(Script)가 보입니다.
+	
+	여기서 Speed를 5로
+		Jump Power를 300으로 설정해 줍니다.
+	
+	6. 실행하여 확인하면 됩니다.
+	
+====================================================
+
+주의!
+1. 캐릭터가 넘어지면 정지했다가 다시 실행시켜주세요
+   너무 자주 넘어지면 Inspector Box Collider 사이즈를
+   조정 해 주시기 바랍니다.
+
+2. Plefabs 폴더에 언덕이랑 사각프레임 같은
+   "프리팹" 몇 개 있습니다. 
+   쓰실려면 쓰시던가 흥!
