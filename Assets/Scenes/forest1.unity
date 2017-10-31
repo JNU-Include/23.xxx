@@ -1699,7 +1699,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 997a64b81334ef447b4f347789f9340c, type: 2}
+  - {fileID: 2100000, guid: 6abfa97af24c44341ad7f0f438ba73c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2879,8 +2879,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100172, guid: 938a0af4c11e51c4b87e2fbe444a755f, type: 2}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: 938a0af4c11e51c4b87e2fbe444a755f, type: 2}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 23d3e13e175195d44a649018df0a1bf9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 938a0af4c11e51c4b87e2fbe444a755f, type: 2}
   m_IsPrefabParent: 0
@@ -5021,7 +5025,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1457959438}
   m_LocalRotation: {x: 0.5909988, y: -0.24257468, z: 0.162497, w: 0.7519792}
-  m_LocalPosition: {x: 0, y: 30, z: 0}
+  m_LocalPosition: {x: 16.09, y: 15.39, z: -3.32}
   m_LocalScale: {x: 0.9535191, y: 0.9535194, z: 0.9535194}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6049,8 +6053,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.13743597, y: 0.16648845, z: 0.18839021}
+  m_Center: {x: -0.018718012, y: 0.1, z: -0.04419515}
 --- !u!54 &1751013191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6078,7 +6082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
-  JumpPower: 3
+  JumpPower: 100
 --- !u!1 &1773103434
 GameObject:
   m_ObjectHideFlags: 0
