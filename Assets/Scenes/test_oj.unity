@@ -786,7 +786,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0.000000059604645, y: -0.5, z: -0.00000008940697}
---- !u!114 &2121479011
+--- !u!114 &2121479010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -794,9 +794,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2121479004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3c7c996fd5a65d44aa3e944785bacaf, type: 3}
+  m_Script: {fileID: 11500000, guid: a27181c89744e4ffcae9008249ca67c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  JumpPower: 300
-  moveArrow: 0000000000000000000000000000000000000000000000000000000000000000
+  JumpPower: 3
