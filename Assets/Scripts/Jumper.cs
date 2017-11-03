@@ -2,23 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jumper : MonoBehaviour {
+public class Jumper : MonoBehaviour
+{
 
-    GameObject jumper2;
+    public float Power;
+
+    // Use this for initialization
 
     void OnCollisionEnter(Collision collision)
     {
-        Vector3 direction =  jumper2.transform.position - transform.position;
-        direction = direction.normalized*1000;
-        collision.gameObject.GetComponent<Rigidbody>().AddForce(direction);
+        Vector3 Power = new Vector3(0, 450 * Time.deltaTime, 0);
+        Power = Power.normalized * 450;
+
+        collision.gameObject.GetComponent<Rigidbody>().AddForce(Power);
+
     }
-	// Use this for initialization
-	void Start () {
-        jumper2 = GameObject.Find("jumper2");
+
+    void Start()
+    {
+
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    // Update is called once per frame
+    void Update()
+    {
+
+
     }
 }
