@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class t_player_move : MonoBehaviour {
-    public int Speed;
+    public float Speed;
     public int JumpPower;
     int[] moveArrow = new int[8];
     //[0]xDir1, [1]yDir1, [2]xDir2, [3]yDir2, [4]xDir3, [5]yDir3, [6]xDir4, [7]yDir4 
@@ -100,6 +100,11 @@ public class t_player_move : MonoBehaviour {
             GetComponent<Rigidbody>().AddForce(Vector3.up * JumpPower);
         }
         
+    }
+
+    public void getSpeed(float gSpeed)
+    {
+        this.Speed = gSpeed;
     }
 }
 
