@@ -9,4 +9,5 @@ public enum M_PlayerState{
 	Dead = 3,
 	Skill1 = 4,
 	Run = 5,
+	Hurt = 6,
 }
