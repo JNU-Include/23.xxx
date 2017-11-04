@@ -12,7 +12,7 @@ public class M_FSMBase : MonoBehaviour {
 	protected virtual void Awake()
 	{
 		characterController = GetComponent<CharacterController> ();
-		anim = GetComponent<Animator> ();
+		anim = GetComponentInChildren<Animator> ();
 	}
 
 	protected virtual void OnEnable() 
