@@ -20,7 +20,7 @@ public class M_MoveUtil : MonoBehaviour {
 	}
 
 	//get location, speed 
-	public static void RotateToDir()
+	public static void RotateToDir(Transform self, Transform target, float turnSpeed)
 	{
 		
 	}
