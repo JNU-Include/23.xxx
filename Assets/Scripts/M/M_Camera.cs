@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class M_Camera : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	Transform tr;
+
+
+
+	void Awake () {
+
+		tr = GameObject.FindGameObjectWithTag ("Player").transform;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+
+
+	void LateUpdate () {
+
+		transform.position = tr.position;
 	}
+
 }
