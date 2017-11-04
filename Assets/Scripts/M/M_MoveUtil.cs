@@ -22,7 +22,23 @@ public class M_MoveUtil : MonoBehaviour {
 	//get location, speed 
 	public static void RotateToDir(Transform self, Transform target, float turnSpeed)
 	{
-		
+		Vector3 dir = target.position - self.position;
+		Vector3 dirXZ = new Vector3 (dir.x, 0f, dir.z);
+		if (dirXZ == Vector3.zero)
+			return;
+
+		self.rotation = Quaternion.RotateTowards (self.rotation, Quaternion.LookRotation (dirXZ), turnSpeed * Time.deltaTime);
+	}
+
+	public static void RotateToDirBurst(Transform self, Transform target)
+	{
+		Vector3 dir = target.position - self.position;
+		Vector3 dirXZ = new Vector3 (dir.x, 0f, dir.z);
+
+		if (dirXZ == Vector3.zero)
+			return;
+
+		self.rotation = Quaternion.LookRotation (dirXZ);
 	}
 
 }
