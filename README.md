@@ -8,9 +8,12 @@ Genre : RPG & Shooting Game
 ---------------------------------------------------------------------------
 ### Job Assignment
 
-Min-Hyeok Lee : UI & UX design, Map, Monster A.I., QA.
+Min-Hyeok Lee : Player script & design , QA.
 
-Suyeon Kang : Player design, object particle effect design, Ending Screen.
+Ohju lee : Monster A.I, Map. Monster design, Camera script.
 
-Kijonn Hong : Game Story, BGM, Intro Screen.
+Suyeon Kang : Intro Screen, Object script, object particle effect design, Ending Screen.
+
+Kijonn Hong : Game Story, BGM, Map.
+
 
