@@ -14,7 +14,7 @@ public class M_MoveUtil : MonoBehaviour {
 
 		characterController.Move (framePos - t.position + Physics.gravity);
 
-		RotateToDir (t, target, turnSpeed);
+		RotateToDir(t, target, turnSpeed);
 
 		return Vector3.Distance (framePos, targetPos);
 	}
