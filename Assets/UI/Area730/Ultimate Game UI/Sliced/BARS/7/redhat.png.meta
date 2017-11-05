@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 8d33f5889380aa845bd0970d458e907a
-timeCreated: 1453061567
-licenseType: Store
+guid: 83b83efa3cd9d4f36a4cfc10334ef5b9
+timeCreated: 1509869782
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -27,7 +27,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -36,7 +36,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
