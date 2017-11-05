@@ -5,6 +5,7 @@ using UnityEngine;
 public class t_player_move : MonoBehaviour {
     public float Speed;
     public int JumpPower;
+    public float rotateSpeed = 0.4f;
     int[] moveArrow = new int[8];
     //[0]xDir1, [1]yDir1, [2]xDir2, [3]yDir2, [4]xDir3, [5]yDir3, [6]xDir4, [7]yDir4 
 
@@ -106,5 +107,6 @@ public class t_player_move : MonoBehaviour {
     {
         this.Speed = gSpeed;
     }
+
 }
 
