@@ -10,4 +10,5 @@ public enum M_PlayerState{
 	Skill1 = 4,
 	Run = 5,
 	Hurt = 6,
+	AttackRun = 7,
 }
