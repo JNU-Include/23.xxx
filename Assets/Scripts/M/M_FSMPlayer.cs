@@ -54,15 +54,15 @@ public class M_FSMPlayer : M_FSMBase {
 					movePoint.gameObject.SetActive (true);
 					attackPoint.gameObject.SetActive (true);
 				} 
-//				else if (layer == LayerMask.NameToLayer (enemyLayer)) {
-//					attackPoint.SetParent (hitInfo.collider.transform);
-//					attackPoint.transform.localPosition = Vector3.zero;
-//					attackPoint.gameObject.SetActive (true);
-//					movePoint.gameObject.SetActive (false);
-//					SetState (M_PlayerState.Run);
-//				} else if (layer == LayerMask.NameToLayer (blockLayer)) {
-//				
-//				}
+				else if (layer == LayerMask.NameToLayer (enemyLayer)) {
+					attackPoint.SetParent (hitInfo.collider.transform);
+					attackPoint.transform.localPosition = Vector3.zero;
+					attackPoint.gameObject.SetActive (true);
+					movePoint.gameObject.SetActive (false);
+					SetState (M_PlayerState.AttackRun);
+				} else if (layer == LayerMask.NameToLayer (blockLayer)) {
+				
+				}
 			}
 		}
 	}
@@ -85,6 +85,7 @@ public class M_FSMPlayer : M_FSMBase {
 	{
 		do {
 			yield return null;
+
 		} while(!isNewState);
 	}
 
@@ -113,12 +114,20 @@ public class M_FSMPlayer : M_FSMBase {
 				SetState(M_PlayerState.Idle);
 				break;
 			}
-//			if(M_MoveUtil.MoveFrame(characterController, attackPoint, moveSpeed, turnSpeed) <= attackRange)
-//			{
-//				movePoint.gameObject.SetActive(false);
-//				SetState(M_PlayerState.Attack);
-//				break;
-//			}
+
+		} while(!isNewState);
+	}
+
+	protected virtual IEnumerator AttackRun()
+	{
+		do {
+			yield return null;	
+			if(M_MoveUtil.MoveFrame(characterController, attackPoint, moveSpeed, turnSpeed) <= attackRange)
+			{
+				movePoint.gameObject.SetActive(false);
+				SetState(M_PlayerState.Attack);
+				break;
+			}
 		} while(!isNewState);
 	}
 
