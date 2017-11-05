@@ -20,10 +20,10 @@ public class Enemy : MonoBehaviour
     {
 
     }
-
+    
     IEnumerator UpdatePath()
     {
-        float refreshRate = .25f;
+        float refreshRate = 0;
 
         while (target != null)
         {
@@ -32,4 +32,5 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(refreshRate);
         }
     }
+    
 }
