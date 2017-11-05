@@ -5,6 +5,8 @@ using UnityEngine;
 public class M_FSMPlayer : M_FSMBase {
 	public int currentHP = 100;
 	public int maxHP = 100;
+	public int currentMP = 50;
+	public int maxMP = 50;
 	public int exp = 0;
 	public int level = 1;
 	public int gold = 0;
