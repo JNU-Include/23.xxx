@@ -65,6 +65,11 @@ public class M_FSMPlayer : M_FSMBase {
 				}
 			}
 		}
+		if (Input.GetKeyDown (KeyCode.C)) {
+			movePoint.gameObject.SetActive (true);
+			SetState (M_PlayerState.Jump);
+		}
+	
 	}
 
 	protected override IEnumerator Idle()
@@ -78,6 +83,12 @@ public class M_FSMPlayer : M_FSMBase {
 	{
 		do {
 			yield return null;
+			if(M_MoveUtil.MoveFrame(characterController, movePoint, moveSpeed, turnSpeed) == 0)
+			{
+				movePoint.gameObject.SetActive(false);
+				SetState(M_PlayerState.Idle);
+				break;
+			}
 		} while(!isNewState);
 	}
 
