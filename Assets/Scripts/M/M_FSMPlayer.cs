@@ -69,6 +69,10 @@ public class M_FSMPlayer : M_FSMBase {
 			movePoint.gameObject.SetActive (true);
 			SetState (M_PlayerState.Jump);
 		}
+		if(Input.GetKeyDown(KeyCode.X)){
+			movePoint.gameObject.SetActive (true);
+			SetState (M_PlayerState.Attack);
+		}
 	
 	}
 
@@ -90,6 +94,7 @@ public class M_FSMPlayer : M_FSMBase {
 				break;
 			}
 		} while(!isNewState);
+//		SetState(M_PlayerState.Idle);
 	}
 
 	protected virtual IEnumerator Attack()
@@ -98,6 +103,7 @@ public class M_FSMPlayer : M_FSMBase {
 			yield return null;
 
 		} while(!isNewState);
+		SetState(M_PlayerState.Idle);
 	}
 
 	protected virtual IEnumerator Dead()

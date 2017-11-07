@@ -12,17 +12,17 @@ public class M_PlayerInfo : MonoBehaviour {
 	public Image mpBar;
 	public Image expBar;
 
-	M_FSMPlayer m_Player;
+	M_FSMPlayer mPlayer;
 
 	void Awake()
 	{
-		m_Player = GameObject.FindGameObjectWithTag ("Player").GetComponent<M_FSMPlayer> ();
+		mPlayer = GameObject.FindGameObjectWithTag ("Player").GetComponent<M_FSMPlayer> ();
 	}
 	// Update is called once per frame
 	void Update () {
-		level.text = m_Player.level.ToString ();
-		hpBar.fillAmount = (float)m_Player.currentHP / (float)m_Player.maxHP;
-		mpBar.fillAmount = (float)m_Player.currentMP / (float)m_Player.maxMP;
-		expBar.fillAmount = ((float)m_Player.exp % 100.0f) / 100.0f;
+		level.text = mPlayer.level.ToString();
+		hpBar.fillAmount = (float)mPlayer.currentHP / (float)mPlayer.maxHP;
+		mpBar.fillAmount = (float)mPlayer.currentMP / (float)mPlayer.maxMP;
+		expBar.fillAmount = ((float)mPlayer.exp % 100.0f) / 100.0f;
 	}
 }
