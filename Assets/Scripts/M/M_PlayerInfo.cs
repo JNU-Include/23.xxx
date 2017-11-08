@@ -22,7 +22,7 @@ public class M_PlayerInfo : MonoBehaviour {
 	void Update () {
 //		level.text = mPlayer.level.ToString ();
 		Debug.Log(mPlayer.level.ToString());
-		level.text = "99";
+//		level.text = "99";
 		hpBar.fillAmount = (float)mPlayer.currentHP / (float)mPlayer.maxHP;
 		mpBar.fillAmount = (float)mPlayer.currentMP / (float)mPlayer.maxMP;
 		expBar.fillAmount = ((float)mPlayer.exp % 100.0f) / 100.0f;
