@@ -11,7 +11,7 @@ public class M_FSMPlayer : M_FSMBase {
 	public int level = 1;
 	public int gold = 0;
 	public float attack = 10.0f;
-	public float attackRange = 1.2f;
+	public float attackRange = 1.5f;
 	public float moveSpeed = 3.0f;
 	public float turnSpeed = 360.0f;
 

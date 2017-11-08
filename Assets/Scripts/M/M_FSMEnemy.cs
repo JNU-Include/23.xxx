@@ -7,12 +7,12 @@ public class M_FSMEnemy : M_FSMBase {
 
 	public float walkSpeed = 1.0f;
 	public float runSpeed = 2.0f;
-	public float turnSpeed = 10.0f;
+	public float turnSpeed = 360.0f;
 	public int currentHP = 50;
 	public int maxHP = 50;
 	public int level = 1;
 	public float attack = 5.0f;
-	public float attackRange = 1.0f;
+	public float attackRange = 1.5f;
 	public float restTime = 1.5f;
 
 	public Transform waypoint;
