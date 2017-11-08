@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class M_FSMEnemy : M_FSMBase {
 
 	public float walkSpeed = 1.0f;
@@ -17,10 +18,27 @@ public class M_FSMEnemy : M_FSMBase {
 	public Transform waypoint;
 	protected Transform[] wayPoints;
 
+	Transform player;
+	M_FSMPlayer m_player;
+	Camera sight;
+
 	protected override void Awake()
 	{
 		base.Awake ();
+
+		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		m_player = player.GetComponent<M_FSMPlayer> ();
+
+		//Camera Data ==> sight 
+		sight = GetComponentInChildren<Camera> ();
 	}
+
+	bool Detection()
+	{
+		Plane[] ps = GeometryUtility.CalculateFrustumPlanes (sight);
+		return GeometryUtility.TestPlanesAABB (ps, m_player.GetComponent<CharacterController>().bounds);
+	}
+
 
 	protected override void OnEnable()
 	{
@@ -41,8 +59,14 @@ public class M_FSMEnemy : M_FSMBase {
 				SetState (M_PlayerState.Run);
 				break;
 			}
+			if(Detection())
+			{
+				SetState(M_PlayerState.AttackRun);
+				break;
+			}
 		} while(!isNewState);
 	}
+		
 
 	protected virtual IEnumerator Run()
 	{
@@ -55,6 +79,11 @@ public class M_FSMEnemy : M_FSMBase {
 				SetState (M_PlayerState.Idle);
 				break;
 			}
+			if(Detection())
+			{
+				SetState(M_PlayerState.AttackRun);
+				break;
+			}
 		} while(!isNewState);
 	}
 
@@ -63,10 +92,32 @@ public class M_FSMEnemy : M_FSMBase {
 		do {
 			yield return null;
 
+			if(Vector3.Distance(transform.position, player.position) > attackRange)
+			{
+				SetState(M_PlayerState.AttackRun);
+				break;
+			}
+
 
 		} while (!isNewState);
 	}
 
+	protected virtual IEnumerator AttackRun()
+	{
+		do {
+			yield return null;
+			if (M_MoveUtil.MoveFrame (characterController, player, runSpeed, turnSpeed) <= attackRange) {
+				SetState (M_PlayerState.Attack);
+				break;
+			}
+			if(!Detection())
+			{
+				SetState(M_PlayerState.Idle);	
+			}
+		} while(!isNewState);
+
+
+	}
 	protected virtual IEnumerator Dead()
 	{
 		do {
