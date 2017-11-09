@@ -154,4 +154,16 @@ public class M_FSMPlayer : M_FSMBase {
 			yield return null;
 		} while(!isNewState);
 	}
+
+	// enemy damege process
+	public void ProcessDamage(float _enemyAttack)
+	{
+		currentHP -= (int)_enemyAttack;
+
+		if (currentHP <= 0) 
+		{
+			SetState (M_PlayerState.Dead);
+			currentHP = 0;
+		}
+	}
 }
