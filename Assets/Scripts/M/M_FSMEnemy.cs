@@ -127,4 +127,8 @@ public class M_FSMEnemy : M_FSMBase {
 		} while (!isNewState);
 	}
 
+	public void OnAttack()
+	{
+		m_player.ProcessDamage (attack);
+	}
 }

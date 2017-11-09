@@ -7,6 +7,7 @@ public class M_AnimationEvent : MonoBehaviour {
 
 	public void OnEnemyAttack()
 	{
+		GetComponentInParent<M_FSMEnemy> ().OnAttack();
 		//ComponentParent OnAttack 
 	}
 
