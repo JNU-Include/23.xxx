@@ -6,8 +6,9 @@ public class Enemy : MonoBehaviour
 {
     Animator animator;
     public float e_health;
+    public float e_atk_pow;
     public float e_distance = 1;
-    public float e_atkSpeed = 0.2f;
+    public float e_atkSpeed = 1.5f;
     public float e_dieTime = 0.5f;
     public float knockPow = 100;
     UnityEngine.AI.NavMeshAgent pathfinder;
@@ -60,9 +61,9 @@ public class Enemy : MonoBehaviour
     IEnumerator e_attack()
     {
         animator.SetFloat("Speed", 0);
-        animator.SetBool("Attack2", true);
+        animator.SetBool("Attack1", true);
         yield return new WaitForSeconds(e_atkSpeed);
-        animator.SetBool("Attack2", false);
+        animator.SetBool("Attack1", false);
         animator.SetFloat("Speed", 1);
         e_trace();
     }
@@ -118,9 +119,9 @@ public class Enemy : MonoBehaviour
         {
             Vector3 targetPosition = new Vector3(target.position.x, 0, target.position.z);
             pathfinder.SetDestination(targetPosition);
-            if (e_distance > Vector3.Distance(player.transform.position, enemy.transform.position) )
+            if (e_distance > Vector3.Distance(player.transform.position, this.transform.position) )
             {
-                pathfinder.SetDestination(enemy.transform.position);
+                pathfinder.SetDestination(this.transform.position);
                 break;
             }
                 yield return new WaitForSeconds(refreshRate);

@@ -171,4 +171,11 @@ public class M_FSMPlayer : M_FSMBase {
 			currentHP = 0;
 		}
 	}
+    
+    //변경된 속도 받아옴
+    public void getSpeed(float gSpeed)
+    {
+        this.moveSpeed = gSpeed;
+    }
+    
 }
