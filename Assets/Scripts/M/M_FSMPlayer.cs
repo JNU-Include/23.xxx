@@ -24,10 +24,15 @@ public class M_FSMPlayer : M_FSMBase {
 	public string blockLayer = "Block";
 	public string enemyLayer = "Enemy";
 
-	protected override void Awake()
+    public static M_FSMPlayer instance = null;
+
+
+    protected override void Awake()
 	{
 		base.Awake ();
 
+        instance = this;
+        
 		movePoint = GameObject.FindGameObjectWithTag ("MovePoint").transform;
 		movePoint.gameObject.SetActive (false);
 
